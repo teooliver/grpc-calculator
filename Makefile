@@ -5,5 +5,9 @@ generate:
 server:
 	go run ./server/main.go
 
-client:
+grpcui:
 	grpcui --plaintext 127.0.0.1:8000
+
+.PHONY: client
+client:
+	go run ./client/main.go -server="localhost:8000"
